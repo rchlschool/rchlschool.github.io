@@ -17,7 +17,7 @@ body {
 
 .page {
     position: relative;
-    margin-top: 0px;
+    margin-top: 0;
     background-color: #FFF;
     max-width: 1200px;
     width: 100%;
@@ -32,7 +32,7 @@ body {
     text-align: center;
     font-size: 20px;
     color: #FFF;
-    background-color: #9E7B4F; /* Muted golden brown */
+    background-color: #9E7B4F;
     padding: 20px;
     width: 150px;
     height: 150px;
@@ -40,7 +40,7 @@ body {
     box-sizing: border-box;
     position: absolute;
     top: 100px;
-    left: 50px; /* Start more to the left */
+    left: 50px;
     animation: a_box_animation 6s ease-in-out 2s forwards;
 }
 
@@ -52,9 +52,9 @@ body {
         transform: translate(0, 0);
     }
     50% {
-        background-color: #F2C6A0; /* Soft peach */
+        background-color: #F2C6A0;
         border-radius: 0%;
-        transform: translate(200px, 200px); /* Diagonal move */
+        transform: translate(200px, 200px);
     }
     100% {
         background-color: #9E7B4F;
@@ -68,7 +68,7 @@ body {
     text-align: center;
     font-size: 20px;
     color: #FFF;
-    background-color: #AFA78D; /* Muted beige-gray */
+    background-color: #AFA78D;
     padding: 20px;
     width: 150px;
     height: 150px;
@@ -76,7 +76,7 @@ body {
     box-sizing: border-box;
     position: absolute;
     top: 250px;
-    left: 250px; /* Starts more towards the center */
+    left: 250px;
     animation: b_box_animation 6s ease-in-out 0.5s forwards;
 }
 
@@ -87,15 +87,15 @@ body {
         transform: translateY(0) scale(1);
     }
     25% {
-        background-color: #D3B89E; /* Light tan */
+        background-color: #D3B89E;
         transform: translateY(-100px) scale(1.2);
     }
     50% {
-        background-color: #F2C6A0; /* Soft peach */
+        background-color: #F2C6A0;
         transform: translateY(0) scale(1);
     }
     75% {
-        background-color: #D3B89E; /* Light tan */
+        background-color: #D3B89E;
         transform: translateY(100px) scale(1.2);
     }
     100% {
@@ -109,7 +109,7 @@ body {
     text-align: center;
     font-size: 20px;
     color: #FFF;
-    background-color: #4C4C4C; /* Muted charcoal gray */
+    background-color: #4C4C4C;
     padding: 20px;
     width: 150px;
     height: 150px;
@@ -117,25 +117,88 @@ body {
     box-sizing: border-box;
     position: absolute;
     top: 50px;
-    left: 450px; /* Starts further right */
+    left: 450px;
     animation: c_box_animation 6s ease-in-out 1.5s forwards;
 }
 
 /* Keyframe for Box 3 */
 @keyframes c_box_animation {
     0% {
-        background-color: #4C4C4C; /* Muted charcoal gray */
+        background-color: #4C4C4C;
         transform: translateX(0) rotate(0deg);
         border-radius: 30%;
     }
     50% {
-        background-color: #E0A85B; /* Muted mustard yellow */
+        background-color: #E0A85B;
         transform: translateX(200px) rotate(180deg);
         border-radius: 0%;
     }
     100% {
-        background-color: #4C4C4C; /* Muted charcoal gray */
+        background-color: #4C4C4C;
         transform: translateX(0) rotate(360deg);
         border-radius: 30%;
+    }
+}
+
+/* Responsive Design for Mobile */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 18px; /* Smaller font size */
+    }
+
+    .page {
+        margin-top: 20px; /* Provide some spacing at the top */
+    }
+
+    .a_box, .b_box, .c_box {
+        width: 120px; /* Smaller size for mobile screens */
+        height: 120px;
+        font-size: 16px;
+    }
+
+    .a_box {
+        top: 40px;
+        left: 10px;
+        animation: none; /* Optional: remove animation on small screens */
+    }
+
+    .b_box {
+        top: 180px;
+        left: 120px;
+        animation: none;
+    }
+
+    .c_box {
+        top: 20px;
+        left: 250px;
+        animation: none;
+    }
+}
+
+/* Further adjustments for very small screens */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 16px; /* Even smaller font size */
+    }
+
+    .a_box, .b_box, .c_box {
+        width: 100px; /* Further reduce size */
+        height: 100px;
+        font-size: 14px;
+    }
+
+    .a_box {
+        top: 30px;
+        left: 5px;
+    }
+
+    .b_box {
+        top: 150px;
+        left: 80px;
+    }
+
+    .c_box {
+        top: 10px;
+        left: 200px;
     }
 }
